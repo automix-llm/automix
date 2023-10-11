@@ -14,11 +14,18 @@ The idea behind AutoMix is simple:
 - We experiment with 5 datasets: CNLI, CoQA, NarrativeQA, QASPER, and Quality. A single file with input.
 
 
+## Notebooks
+
+### Running inference
+
+[**Step1 Run inference to solve tasks**](https://github.com/automix-llm/automix/blob/main/colabs/Step1_SolveQueries.ipynb) - Brief explanation here.
+   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/automix-llm/automix/blob/main/colabs/Step1_SolveQueries.ipynb)
+
 ### Few-shot self-verification
 
-- Prompt here.
+- [**Step2 Self Verify**](https://github.com/automix-llm/automix/blob/main/colabs/Step2_SelfVerify.ipynb) - A sentence about this notebook’s purpose.
+   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/automix-llm/automix/blob/main/colabs/Step2_SelfVerify.ipynb)
 
-- The outputs are located in the column called `TODO`.
 
 
 ### Meta-verification
