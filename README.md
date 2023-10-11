@@ -14,7 +14,7 @@ The idea behind AutoMix is simple:
 
 ### Running inference
 
-[**Step1 Run inference to solve tasks**](https://github.com/automix-llm/automix/blob/main/colabs/Step1_SolveQueries.ipynb) - Task prompts, code to run inference from different language models.
+- [**Step1 Run inference to solve tasks**](https://github.com/automix-llm/automix/blob/main/colabs/Step1_SolveQueries.ipynb) - Task prompts, code to run inference from different language models.
    [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/automix-llm/automix/blob/main/colabs/Step1_SolveQueries.ipynb)
 
 ### Few-shot self-verification
