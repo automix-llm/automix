@@ -19,7 +19,7 @@ The idea behind AutoMix is simple:
 
 ### Few-shot self-verification
 
-- [**Step2 Self Verify**](https://github.com/automix-llm/automix/blob/main/colabs/Step2_SelfVerify.ipynb) - Verification prompts.
+- [**Step2 Self Verify**](https://github.com/automix-llm/automix/blob/main/colabs/Step2_SelfVerify.ipynb) - Verification prompts, code to run verification on the outputs produced in step 1.
    [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/automix-llm/automix/blob/main/colabs/Step2_SelfVerify.ipynb)
 
 
