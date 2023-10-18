@@ -26,7 +26,8 @@ The idea behind AutoMix is simple:
 
 ### Meta-verification
 
-- TODO
+- [**Step3 Meta Verify**](https://github.com/automix-llm/automix/blob/main/paper_eval.py) - Run meta-verification using different AutoMix methods on outputs produced from Step 2. 
+- TODO : Clean & Presentable (File/Variable Names, Args ...)
 
 
 ## Data and Outputs
