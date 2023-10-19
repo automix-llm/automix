@@ -1,4 +1,4 @@
-# automix
+# AutoMix: Automatically Mixing Language Models
 
 
 ## What is AutoMix?
