@@ -1,4 +1,4 @@
-# automix
+# AutoMix: Automatically Mixing Language Models
 
 
 ## What is AutoMix?
@@ -73,17 +73,6 @@ quality       train    2515
               val      2085
 Name: split, dtype: int64
 ```
-
-- Outputs from LLAMA13B and LLAMA70B
-
-
-### Sample row
-
-
-## Metrics
-
-
-## Starting OpenAI server for LLAMA2
 
 
 
