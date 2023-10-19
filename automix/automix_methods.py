@@ -59,7 +59,7 @@ class SelfConsistency(Threshold):
 	def generate_points(self, data = None):
 		return [0.5]
 
-class POMDP:
+class POMDPSimple:
 
 	def compute_obs_probs(self, df):
 		categories = ['NEEDY', 'GOOD', 'HOPELESS']
@@ -116,7 +116,7 @@ class POMDP:
 	def generate_points(self, data):
 		return self.compute_obs_probs(data)
 
-class Greedy(POMDP):
+class GreedyPOMDP(POMDPSimple):
 
 	def generate_points(self, data = None):
 		points = []
@@ -197,4 +197,4 @@ class FixedAnswerRouting:
 	def __repr__(self) -> str:
 		return 'FixedAnswerRouting(' + str(self.method) + ', ' + str(self.fixed_routing_elems) + ')'
 
-	
+POMDP = lambda *args, **kwargs: AutomixUnion(POMDPSimple(*args, **kwargs), GreedyPOMDP(*args, **kwargs), DoubleThreshold(*args, **kwargs), Threshold(*args, **kwargs))

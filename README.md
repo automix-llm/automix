@@ -26,8 +26,10 @@ The idea behind AutoMix is simple:
 
 ### Meta-verification
 
-- [**Step3 Meta Verify**](https://github.com/automix-llm/automix/blob/main/paper_eval.py) - Run meta-verification using different AutoMix methods on outputs produced from Step 2. 
-- TODO : Clean & Presentable (File/Variable Names, Args ...)
+- [**Step3 Meta Verify**](github.com/automix-llm/automix/blob/main/colabs/Step3_MetaVerify.ipynb) - Run meta-verification using different AutoMix methods on outputs produced from Step 2. 
+- You can run `python setup.py install' to use the meta-verifier system wide.
+- You can also install automix package using pip.  [Coming Soon]
+- To replicate paper numbers, run python scripts paper_results.py
 
 
 ## Data and Outputs

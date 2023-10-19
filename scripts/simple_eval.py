@@ -1,4 +1,4 @@
-from automix import Automix, Threshold, DoubleThreshold, POMDP, TripleThreshold, AutomixUnion, Greedy, SelfConsistency
+from automix import Automix, Threshold, SelfConsistency, POMDP
 import pandas as pd
 import sys
 
@@ -13,7 +13,7 @@ val_df = val_df.sample(val_size)
 
 ##### Init Automix #######
 # POMDP:
-method = AutomixUnion(DoubleThreshold(num_bins = 8), POMDP(num_bins = 8), Greedy(num_bins = 8))
+method = POMDP(num_bins = 8)
 # Threshold:
 # method = Threshold(num_bins = 8)
 # Self-Consistency:

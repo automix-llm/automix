@@ -75,7 +75,7 @@ class Automix:
             # print(str(param), ibc_lift, automix_slm_slope, avg_performance, avg_cost, slm_llm_slope)
 
         self.best_param = eval(max(thresh_dic, key=thresh_dic.get))
-        print(self.best_param, thresh_dic[str(self.best_param)])
+        # print(self.best_param, thresh_dic[str(self.best_param)])
 
     def infer(self, df_row):
         if self.best_param is None:
@@ -94,6 +94,6 @@ class Automix:
         ibc_lift = (automix_slm_slope - slm_llm_slope) / slm_llm_slope
         
         if return_dict:
-            return {'ibc_lift' : ibc_lift, 'automix_slm_slope' : automix_slm_slope, 'avg_performance' : avg_performance, 'avg_cost' : avg_cost, 'to_retry' : to_retry}
+            return {'ibc_lift' : ibc_lift, 'automix_slm_slope' : automix_slm_slope, 'avg_performance' : avg_performance, 'avg_cost' : avg_cost, 'route_to_llm' : to_retry}
         
         return ibc_lift, automix_slm_slope, avg_performance, avg_cost
