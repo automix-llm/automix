@@ -36,7 +36,11 @@ The idea behind AutoMix is simple:
 
 - You can run `python setup.py install' to use the meta-verifier system wide.
 
-- To replicate paper numbers, run `python scripts paper_results.py`
+
+
+### Replicating the results
+
+- To replicate the results in the paper, please run `python scripts paper_results.py`
 
 
 ## Data and Outputs
