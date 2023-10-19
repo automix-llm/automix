@@ -1,13 +1,19 @@
 # AutoMix: Automatically Mixing Language Models
 
 
+<div align="center">
+    <img src="https://github.com/automix-llm/automix/assets/1304693/a81ba101-247d-4fa7-8dc3-989dd5884483" width="500">
+</div>
+
+
 ## What is AutoMix?
 
 The idea behind AutoMix is simple: 
 
 1. Send a query to small language model (SLM), gets a noisy label on its correctness using few-shot self-verification done with the same model (SLM).
 
-2. Use a meta-verifier to "double check" verifier's output.Depending on the final output, we can either trust the SLM's output or not. If we decide not to, we send the query to a large language model (LLM).
+2. Use a meta-verifier to "double check" verifier's output, and route the query to a larger language model (LLM) if needed.
+3. 
 
 
 ## Notebooks
