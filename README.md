@@ -72,17 +72,6 @@ quality       train    2515
 Name: split, dtype: int64
 ```
 
-- Outputs from LLAMA13B and LLAMA70B
-
-
-### Sample row
-
-
-## Metrics
-
-
-## Starting OpenAI server for LLAMA2
-
 
 
 
