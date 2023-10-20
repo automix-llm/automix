@@ -9,7 +9,6 @@
 
 
 
-
 ## What is AutoMix?
 
 The idea behind AutoMix is simple: 
@@ -18,6 +17,25 @@ The idea behind AutoMix is simple:
 
 2. Use a meta-verifier to "double check" verifier's output, and route the query to a larger language model (LLM) if needed.
 
+
+
+<div align="center">
+    <img src="https://github.com/automix-llm/automix/assets/1304693/3043c5b1-08b0-42dd-9180-ca13f45a83eb" width="850">
+</div>
+
+
+
+## Self-Verification and Meta-verification
+
+
+At the center of automix is the idea of context-grounded self-verification:
+
+
+<div align="center">
+    <img src="https://github.com/automix-llm/automix/assets/1304693/ff187307-9366-471f-ab59-9204c177f711" width="850">
+</div>
+
+- However, such verification can often be noisy, so we introduce an additional layer of meta-verification using POMDPs or thresholding.
 
 
 ## Notebooks
