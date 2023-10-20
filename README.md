@@ -35,7 +35,7 @@ At the center of automix is the idea of context-grounded self-verification:
     <img src="https://github.com/automix-llm/automix/assets/1304693/ff187307-9366-471f-ab59-9204c177f711" width="850">
 </div>
 
-- However, such verification can often be noisy, so we introduce an additional layer of meta-verification using POMDPs or thresholding.
+- However, such verification can often be noisy, so we introduce an additional layer of meta-verification using [POMDPs](https://www.pomdp.org/) or thresholding.
 
 
 ## Notebooks
@@ -71,7 +71,7 @@ At the center of automix is the idea of context-grounded self-verification:
 - We experiment with 5 datasets: CNLI, CoQA, NarrativeQA, QASPER, and Quality.
 
 
-- Note: The dataset are sourced from [scrolls](https://www.scrolls-benchmark.com/). Please cite scrolls and the appropriate sources if we use these datasets. We are making them available in a sinlge jsonl file for ease of use and reproducibility. For details on how CoQa was prepared, see [**Preparing COQA**](https://github.com/automix-llm/automix/blob/main/colabs/Preparing_COQA.ipynb).
+- Note: The dataset are sourced from [scrolls](https://www.scrolls-benchmark.com/). Please cite scrolls and the appropriate sources if you use these datasets. We are making them available in a sinlge jsonl file for ease of use and reproducibility. For details on how CoQa was prepared, please see [**Preparing COQA**](https://github.com/automix-llm/automix/blob/main/colabs/Preparing_COQA.ipynb).
    
 
 - **Inputs:** All input data for the AutoMix project is provided in `automix_inputs.jsonl`. You can access and download it directly from [Google Drive](https://drive.google.com/file/d/1dhyt7UuYumk9Gae9eJ_mpTVrLeSTuRht/view?usp=sharing).
