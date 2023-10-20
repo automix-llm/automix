@@ -15,7 +15,7 @@ The idea behind AutoMix is simple:
 
 1. Send a query to small language model (SLM), gets a noisy label on its correctness using **few-shot self-verification** done with the same model (SLM).
 
-2. Use a meta-verifier to "double check" verifier's output, and route the query to a larger language model (LLM) if needed.
+2. Use a meta-verifier to _double check_ verifier's output, and route the query to a larger language model (LLM) if needed.
 
 
 
