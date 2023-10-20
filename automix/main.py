@@ -59,9 +59,9 @@ class Automix:
         thresh_dic = dict()
         # Some methods may requiring passing the data
         
-        for param in self.method.generate_points(data):
+        for param in self.method.generate_points(data, verifier_column=self.verifier_column):
 
-            to_retry = self.method.run(data, param)
+            to_retry = self.method.run(data, param, verifier_column=self.verifier_column)
             avg_performance, avg_cost = self.compute_performance_cost(data, to_retry, costs = costs, verifier_cost = verifier_cost)
 
             slm_llm_slope, slm_perf, _ = self.get_slm_llm_slope_perf(data, costs = costs, verifier_cost = verifier_cost)
@@ -70,12 +70,10 @@ class Automix:
             automix_slm_slope = (avg_performance - slm_perf) / (avg_cost - slm_cost)
             ibc_lift = (automix_slm_slope - slm_llm_slope) / slm_llm_slope
             thresh_dic[str(param)] = ibc_lift
-            # from pdb import set_trace
-            # set_trace()
-            # print(str(param), ibc_lift, automix_slm_slope, avg_performance, avg_cost, slm_llm_slope)
 
         self.best_param = eval(max(thresh_dic, key=thresh_dic.get))
-        # print(self.best_param, thresh_dic[str(self.best_param)])
+        if self.verbose:
+            print('Best Param:', self.best_param, thresh_dic[str(self.best_param)])
 
     def infer(self, df_row):
         if self.best_param is None:
@@ -83,7 +81,7 @@ class Automix:
         to_retry = self.method.run(df_row, self.best_param)
         return to_retry
 
-    def evaluate(self, data : pd.DataFrame, costs = None, verifier_cost = None, return_dict = False):
+    def evaluate(self, data : pd.DataFrame, costs = None, verifier_cost = None, return_dict = False, return_decisions = False):
         costs, verifier_cost = self.fill_variables(costs = costs, verifier_cost = verifier_cost)
         slm_cost, llm_cost = costs
 
@@ -94,6 +92,11 @@ class Automix:
         ibc_lift = (automix_slm_slope - slm_llm_slope) / slm_llm_slope
         
         if return_dict:
-            return {'ibc_lift' : ibc_lift, 'automix_slm_slope' : automix_slm_slope, 'avg_performance' : avg_performance, 'avg_cost' : avg_cost, 'route_to_llm' : to_retry}
-        
+            if return_decisions:
+                return {'ibc_lift' : ibc_lift, 'automix_slm_slope' : automix_slm_slope, 'avg_performance' : avg_performance, 'avg_cost' : avg_cost, 'route_to_llm' : to_retry}
+            else:
+                return {'ibc_lift' : ibc_lift, 'automix_slm_slope' : automix_slm_slope, 'avg_performance' : avg_performance, 'avg_cost' : avg_cost}
+
+        if return_decisions:
+            return ibc_lift, automix_slm_slope, avg_performance, avg_cost, to_retry
         return ibc_lift, automix_slm_slope, avg_performance, avg_cost

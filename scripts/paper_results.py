@@ -59,7 +59,7 @@ for dset in ['coqa','cnli', 'narrative_qa','quality', 'qasper']:
             method = method_type(num_bins = BINS)
 
             if dset == 'qasper' and not isinstance(method, SelfConsistency):
-                method = FixedAnswerRouting(method, "unanswerable'.")
+                method = FixedAnswerRouting(method, "unanswerable'.", ans_column = 'llama13b_pred_ans')
 
 
             mixer = Automix(method)
@@ -69,7 +69,6 @@ for dset in ['coqa','cnli', 'narrative_qa','quality', 'qasper']:
             results = mixer.evaluate(test_df, return_dict = True)
 
             ##### Print Results #######
-            del results['route_to_llm']
             print(results)
 
             lifts.append(results['ibc_lift'])
@@ -94,7 +93,7 @@ for dset in ['coqa','cnli', 'narrative_qa','quality', 'qasper']:
         complete_results['perfs'][dset][str(method)] = perfs
 
 import json
-with open(f'paper_eval_seed_final.json', 'w') as fp:
+with open(f'results/paper_eval_multi_seed_final.json', 'w') as fp:
     json.dump(complete_results, fp, indent=4)
 
 print(json.dumps(complete_results, indent=4))

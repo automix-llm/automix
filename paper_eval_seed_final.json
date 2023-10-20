@@ -1,0 +1,1161 @@
+{
+    "avg_lift": {
+        "coqa": {
+            "AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac99d752d0>, <automix.automix_methods.GreedyPOMDP object at 0x7fac99cc1ad0>, <automix.automix_methods.DoubleThreshold object at 0x7fadbe8a14d0>, <automix.automix_methods.Threshold object at 0x7fac99dd1510>)": 0.4367988620592076,
+            "<automix.automix_methods.Threshold object at 0x7fac99d49790>": 0.4316468926243582,
+            "<automix.automix_methods.SelfConsistency object at 0x7fac99d32e50>": 0.5545095838956666
+        },
+        "cnli": {
+            "AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac8bbb6850>, <automix.automix_methods.GreedyPOMDP object at 0x7fac8bbb6d90>, <automix.automix_methods.DoubleThreshold object at 0x7fac8bbb5c10>, <automix.automix_methods.Threshold object at 0x7fac8a817690>)": 0.8871592843007582,
+            "<automix.automix_methods.Threshold object at 0x7fac8bbb5c10>": -0.03548199900760874,
+            "<automix.automix_methods.SelfConsistency object at 0x7fac8a82df10>": -0.16958437960445785
+        },
+        "narrative_qa": {
+            "AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac99caa5d0>, <automix.automix_methods.GreedyPOMDP object at 0x7fac99ca9550>, <automix.automix_methods.DoubleThreshold object at 0x7fac8a9d4250>, <automix.automix_methods.Threshold object at 0x7fac8a9d7890>)": 0.06436821177640357,
+            "<automix.automix_methods.Threshold object at 0x7fac8a897bd0>": 0.12150770547688286,
+            "<automix.automix_methods.SelfConsistency object at 0x7fac8a8b8e90>": 0.0919880290547683
+        },
+        "quality": {
+            "AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac91ac7550>, <automix.automix_methods.GreedyPOMDP object at 0x7fac91ac7fd0>, <automix.automix_methods.DoubleThreshold object at 0x7fac91ac6cd0>, <automix.automix_methods.Threshold object at 0x7fadbea71fd0>)": -0.11836078999694852,
+            "<automix.automix_methods.Threshold object at 0x7fac93cad5d0>": -0.04353735138238003,
+            "<automix.automix_methods.SelfConsistency object at 0x7fac91ac5f50>": -0.06967532201445036
+        },
+        "qasper": {
+            "FixedAnswerRouting(AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac99cc09d0>, <automix.automix_methods.GreedyPOMDP object at 0x7fac99cc0250>, <automix.automix_methods.DoubleThreshold object at 0x7fac99c46990>, <automix.automix_methods.Threshold object at 0x7fac8a990290>), unanswerable'.)": 0.06927144085720646,
+            "FixedAnswerRouting(<automix.automix_methods.Threshold object at 0x7fac8a7f9750>, unanswerable'.)": 0.036689880929256,
+            "<automix.automix_methods.SelfConsistency object at 0x7fac99c46990>": 0.022979566113392306
+        }
+    },
+    "max_lift": {
+        "coqa": {
+            "AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac99d752d0>, <automix.automix_methods.GreedyPOMDP object at 0x7fac99cc1ad0>, <automix.automix_methods.DoubleThreshold object at 0x7fadbe8a14d0>, <automix.automix_methods.Threshold object at 0x7fac99dd1510>)": 0.6211781326789437,
+            "<automix.automix_methods.Threshold object at 0x7fac99d49790>": 0.6211781326789437,
+            "<automix.automix_methods.SelfConsistency object at 0x7fac99d32e50>": 0.5545095838956667
+        },
+        "cnli": {
+            "AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac8bbb6850>, <automix.automix_methods.GreedyPOMDP object at 0x7fac8bbb6d90>, <automix.automix_methods.DoubleThreshold object at 0x7fac8bbb5c10>, <automix.automix_methods.Threshold object at 0x7fac8a817690>)": 1.1462870612600846,
+            "<automix.automix_methods.Threshold object at 0x7fac8bbb5c10>": -0.026770062051506338,
+            "<automix.automix_methods.SelfConsistency object at 0x7fac8a82df10>": -0.16958437960445788
+        },
+        "narrative_qa": {
+            "AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac99caa5d0>, <automix.automix_methods.GreedyPOMDP object at 0x7fac99ca9550>, <automix.automix_methods.DoubleThreshold object at 0x7fac8a9d4250>, <automix.automix_methods.Threshold object at 0x7fac8a9d7890>)": 0.24846106597299195,
+            "<automix.automix_methods.Threshold object at 0x7fac8a897bd0>": 0.24846106597299195,
+            "<automix.automix_methods.SelfConsistency object at 0x7fac8a8b8e90>": 0.09198802905476829
+        },
+        "quality": {
+            "AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac91ac7550>, <automix.automix_methods.GreedyPOMDP object at 0x7fac91ac7fd0>, <automix.automix_methods.DoubleThreshold object at 0x7fac91ac6cd0>, <automix.automix_methods.Threshold object at 0x7fadbea71fd0>)": -0.03166891650259212,
+            "<automix.automix_methods.Threshold object at 0x7fac93cad5d0>": -0.016512458313740753,
+            "<automix.automix_methods.SelfConsistency object at 0x7fac91ac5f50>": -0.06967532201445036
+        },
+        "qasper": {
+            "FixedAnswerRouting(AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac99cc09d0>, <automix.automix_methods.GreedyPOMDP object at 0x7fac99cc0250>, <automix.automix_methods.DoubleThreshold object at 0x7fac99c46990>, <automix.automix_methods.Threshold object at 0x7fac8a990290>), unanswerable'.)": 0.07453077986292246,
+            "FixedAnswerRouting(<automix.automix_methods.Threshold object at 0x7fac8a7f9750>, unanswerable'.)": 0.10217402555329119,
+            "<automix.automix_methods.SelfConsistency object at 0x7fac99c46990>": 0.022979566113392306
+        }
+    },
+    "min_lift": {
+        "coqa": {
+            "AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac99d752d0>, <automix.automix_methods.GreedyPOMDP object at 0x7fac99cc1ad0>, <automix.automix_methods.DoubleThreshold object at 0x7fadbe8a14d0>, <automix.automix_methods.Threshold object at 0x7fac99dd1510>)": -0.12194730760095178,
+            "<automix.automix_methods.Threshold object at 0x7fac99d49790>": -0.12194730760095178,
+            "<automix.automix_methods.SelfConsistency object at 0x7fac99d32e50>": 0.5545095838956667
+        },
+        "cnli": {
+            "AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac8bbb6850>, <automix.automix_methods.GreedyPOMDP object at 0x7fac8bbb6d90>, <automix.automix_methods.DoubleThreshold object at 0x7fac8bbb5c10>, <automix.automix_methods.Threshold object at 0x7fac8a817690>)": 0.0164923411065393,
+            "<automix.automix_methods.Threshold object at 0x7fac8bbb5c10>": -0.03921568627450976,
+            "<automix.automix_methods.SelfConsistency object at 0x7fac8a82df10>": -0.16958437960445788
+        },
+        "narrative_qa": {
+            "AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac99caa5d0>, <automix.automix_methods.GreedyPOMDP object at 0x7fac99ca9550>, <automix.automix_methods.DoubleThreshold object at 0x7fac8a9d4250>, <automix.automix_methods.Threshold object at 0x7fac8a9d7890>)": -0.18272148181437703,
+            "<automix.automix_methods.Threshold object at 0x7fac8a897bd0>": -0.0014764075066323987,
+            "<automix.automix_methods.SelfConsistency object at 0x7fac8a8b8e90>": 0.09198802905476829
+        },
+        "quality": {
+            "AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac91ac7550>, <automix.automix_methods.GreedyPOMDP object at 0x7fac91ac7fd0>, <automix.automix_methods.DoubleThreshold object at 0x7fac91ac6cd0>, <automix.automix_methods.Threshold object at 0x7fadbea71fd0>)": -0.27937494107053956,
+            "<automix.automix_methods.Threshold object at 0x7fac93cad5d0>": -0.06967532201445036,
+            "<automix.automix_methods.SelfConsistency object at 0x7fac91ac5f50>": -0.06967532201445036
+        },
+        "qasper": {
+            "FixedAnswerRouting(AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac99cc09d0>, <automix.automix_methods.GreedyPOMDP object at 0x7fac99cc0250>, <automix.automix_methods.DoubleThreshold object at 0x7fac99c46990>, <automix.automix_methods.Threshold object at 0x7fac8a990290>), unanswerable'.)": 0.04414921899003984,
+            "FixedAnswerRouting(<automix.automix_methods.Threshold object at 0x7fac8a7f9750>, unanswerable'.)": 0.00028842767894710325,
+            "<automix.automix_methods.SelfConsistency object at 0x7fac99c46990>": 0.022979566113392306
+        }
+    },
+    "std_lift": {
+        "coqa": {
+            "AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac99d752d0>, <automix.automix_methods.GreedyPOMDP object at 0x7fac99cc1ad0>, <automix.automix_methods.DoubleThreshold object at 0x7fadbe8a14d0>, <automix.automix_methods.Threshold object at 0x7fac99dd1510>)": 0.2006720046513658,
+            "<automix.automix_methods.Threshold object at 0x7fac99d49790>": 0.27865167492288356,
+            "<automix.automix_methods.SelfConsistency object at 0x7fac99d32e50>": 1.1102230246251565e-16
+        },
+        "cnli": {
+            "AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac8bbb6850>, <automix.automix_methods.GreedyPOMDP object at 0x7fac8bbb6d90>, <automix.automix_methods.DoubleThreshold object at 0x7fac8bbb5c10>, <automix.automix_methods.Threshold object at 0x7fac8a817690>)": 0.3184970273552395,
+            "<automix.automix_methods.Threshold object at 0x7fac8bbb5c10>": 0.005703301507288915,
+            "<automix.automix_methods.SelfConsistency object at 0x7fac8a82df10>": 0.0
+        },
+        "narrative_qa": {
+            "AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac99caa5d0>, <automix.automix_methods.GreedyPOMDP object at 0x7fac99ca9550>, <automix.automix_methods.DoubleThreshold object at 0x7fac8a9d4250>, <automix.automix_methods.Threshold object at 0x7fac8a9d7890>)": 0.11713606933013315,
+            "<automix.automix_methods.Threshold object at 0x7fac8a897bd0>": 0.0752937842839726,
+            "<automix.automix_methods.SelfConsistency object at 0x7fac8a8b8e90>": 1.3877787807814457e-17
+        },
+        "quality": {
+            "AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac91ac7550>, <automix.automix_methods.GreedyPOMDP object at 0x7fac91ac7fd0>, <automix.automix_methods.DoubleThreshold object at 0x7fac91ac6cd0>, <automix.automix_methods.Threshold object at 0x7fadbea71fd0>)": 0.09019260541776804,
+            "<automix.automix_methods.Threshold object at 0x7fac93cad5d0>": 0.01242468353775424,
+            "<automix.automix_methods.SelfConsistency object at 0x7fac91ac5f50>": 0.0
+        },
+        "qasper": {
+            "FixedAnswerRouting(AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac99cc09d0>, <automix.automix_methods.GreedyPOMDP object at 0x7fac99cc0250>, <automix.automix_methods.DoubleThreshold object at 0x7fac99c46990>, <automix.automix_methods.Threshold object at 0x7fac8a990290>), unanswerable'.)": 0.01032683697393424,
+            "FixedAnswerRouting(<automix.automix_methods.Threshold object at 0x7fac8a7f9750>, unanswerable'.)": 0.0368977267525825,
+            "<automix.automix_methods.SelfConsistency object at 0x7fac99c46990>": 0.0
+        }
+    },
+    "best_params": {
+        "coqa": {
+            "AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac99d752d0>, <automix.automix_methods.GreedyPOMDP object at 0x7fac99cc1ad0>, <automix.automix_methods.DoubleThreshold object at 0x7fadbe8a14d0>, <automix.automix_methods.Threshold object at 0x7fac99dd1510>)": [
+                [
+                    [
+                        1,
+                        0,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    0
+                ],
+                [
+                    [
+                        1,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    0
+                ],
+                [
+                    [
+                        1,
+                        0,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    0
+                ],
+                [
+                    [
+                        0.0,
+                        0.375
+                    ],
+                    2
+                ],
+                [
+                    [
+                        0.0,
+                        0.125
+                    ],
+                    2
+                ],
+                [
+                    [
+                        0.0,
+                        0.25
+                    ],
+                    2
+                ],
+                [
+                    [
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    0
+                ],
+                [
+                    [
+                        1,
+                        1,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    1
+                ],
+                [
+                    [
+                        1,
+                        0,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    0
+                ],
+                [
+                    [
+                        0.0,
+                        0.25
+                    ],
+                    2
+                ]
+            ],
+            "<automix.automix_methods.Threshold object at 0x7fac99d49790>": [
+                0.0,
+                0.125,
+                0.375,
+                0.375,
+                0.125,
+                0.25,
+                0.0,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "<automix.automix_methods.SelfConsistency object at 0x7fac99d32e50>": [
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5
+            ]
+        },
+        "cnli": {
+            "AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac8bbb6850>, <automix.automix_methods.GreedyPOMDP object at 0x7fac8bbb6d90>, <automix.automix_methods.DoubleThreshold object at 0x7fac8bbb5c10>, <automix.automix_methods.Threshold object at 0x7fac8a817690>)": [
+                [
+                    [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        1,
+                        1
+                    ],
+                    0
+                ],
+                [
+                    [
+                        0.5,
+                        0.75
+                    ],
+                    2
+                ],
+                [
+                    [
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1
+                    ],
+                    1
+                ],
+                [
+                    [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        1,
+                        0,
+                        1
+                    ],
+                    0
+                ],
+                [
+                    [
+                        0.625,
+                        0.875
+                    ],
+                    2
+                ],
+                [
+                    [
+                        0.625,
+                        0.75
+                    ],
+                    2
+                ],
+                [
+                    [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        1,
+                        0,
+                        0
+                    ],
+                    0
+                ],
+                [
+                    [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        1,
+                        1,
+                        1
+                    ],
+                    1
+                ],
+                [
+                    [
+                        0.625,
+                        0.75
+                    ],
+                    2
+                ],
+                [
+                    [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        1,
+                        0,
+                        0
+                    ],
+                    1
+                ]
+            ],
+            "<automix.automix_methods.Threshold object at 0x7fac8bbb5c10>": [
+                1.0,
+                1.0,
+                0.875,
+                1.0,
+                0.875,
+                0.75,
+                0.75,
+                1.0,
+                0.75,
+                0.875
+            ],
+            "<automix.automix_methods.SelfConsistency object at 0x7fac8a82df10>": [
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5
+            ]
+        },
+        "narrative_qa": {
+            "AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac99caa5d0>, <automix.automix_methods.GreedyPOMDP object at 0x7fac99ca9550>, <automix.automix_methods.DoubleThreshold object at 0x7fac8a9d4250>, <automix.automix_methods.Threshold object at 0x7fac8a9d7890>)": [
+                [
+                    [
+                        1,
+                        0,
+                        1,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    0
+                ],
+                [
+                    [
+                        0,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    0
+                ],
+                [
+                    [
+                        0.0,
+                        0.25
+                    ],
+                    2
+                ],
+                [
+                    [
+                        0,
+                        1,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    0
+                ],
+                [
+                    [
+                        0,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    0
+                ],
+                [
+                    [
+                        0.0,
+                        0.125
+                    ],
+                    2
+                ],
+                [
+                    [
+                        0.125,
+                        0.25
+                    ],
+                    2
+                ],
+                [
+                    [
+                        0,
+                        0,
+                        0,
+                        1,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    1
+                ],
+                [
+                    [
+                        0.125,
+                        0.25
+                    ],
+                    2
+                ],
+                [
+                    [
+                        0.75,
+                        0.875
+                    ],
+                    2
+                ]
+            ],
+            "<automix.automix_methods.Threshold object at 0x7fac8a897bd0>": [
+                0.5,
+                0.375,
+                0.25,
+                0.125,
+                0.5,
+                0.125,
+                0.25,
+                0.5,
+                0.25,
+                0.875
+            ],
+            "<automix.automix_methods.SelfConsistency object at 0x7fac8a8b8e90>": [
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5
+            ]
+        },
+        "quality": {
+            "AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac91ac7550>, <automix.automix_methods.GreedyPOMDP object at 0x7fac91ac7fd0>, <automix.automix_methods.DoubleThreshold object at 0x7fac91ac6cd0>, <automix.automix_methods.Threshold object at 0x7fadbea71fd0>)": [
+                [
+                    [
+                        0.625,
+                        0.75
+                    ],
+                    2
+                ],
+                [
+                    [
+                        1,
+                        0,
+                        1,
+                        1,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0
+                    ],
+                    0
+                ],
+                [
+                    [
+                        0,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    0
+                ],
+                [
+                    [
+                        0,
+                        0,
+                        1,
+                        0,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    0
+                ],
+                [
+                    [
+                        0.125,
+                        0.625
+                    ],
+                    2
+                ],
+                [
+                    [
+                        1,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0
+                    ],
+                    0
+                ],
+                [
+                    [
+                        0.625,
+                        0.75
+                    ],
+                    2
+                ],
+                [
+                    [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    1
+                ],
+                [
+                    [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        1,
+                        1
+                    ],
+                    1
+                ],
+                [
+                    [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    1
+                ]
+            ],
+            "<automix.automix_methods.Threshold object at 0x7fac93cad5d0>": [
+                1.0,
+                0.75,
+                0.75,
+                0.5,
+                0.625,
+                0.75,
+                0.875,
+                0.75,
+                1.0,
+                1.0
+            ],
+            "<automix.automix_methods.SelfConsistency object at 0x7fac91ac5f50>": [
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5
+            ]
+        },
+        "qasper": {
+            "FixedAnswerRouting(AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac99cc09d0>, <automix.automix_methods.GreedyPOMDP object at 0x7fac99cc0250>, <automix.automix_methods.DoubleThreshold object at 0x7fac99c46990>, <automix.automix_methods.Threshold object at 0x7fac8a990290>), unanswerable'.)": [
+                [
+                    [
+                        0.375,
+                        0.5
+                    ],
+                    2
+                ],
+                [
+                    [
+                        0.375,
+                        0.5
+                    ],
+                    2
+                ],
+                [
+                    [
+                        0.375,
+                        0.5
+                    ],
+                    2
+                ],
+                [
+                    [
+                        0.375,
+                        0.5
+                    ],
+                    2
+                ],
+                [
+                    [
+                        0.375,
+                        0.625
+                    ],
+                    2
+                ],
+                [
+                    [
+                        0.375,
+                        0.5
+                    ],
+                    2
+                ],
+                [
+                    [
+                        0.375,
+                        0.5
+                    ],
+                    2
+                ],
+                [
+                    [
+                        0.25,
+                        0.5
+                    ],
+                    2
+                ],
+                [
+                    [
+                        0.375,
+                        0.5
+                    ],
+                    2
+                ],
+                [
+                    [
+                        1,
+                        0,
+                        0,
+                        1,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    0
+                ]
+            ],
+            "FixedAnswerRouting(<automix.automix_methods.Threshold object at 0x7fac8a7f9750>, unanswerable'.)": [
+                0.625,
+                0.75,
+                0.0,
+                0.75,
+                0.625,
+                0.625,
+                0.5,
+                0.75,
+                0.5,
+                0.0
+            ],
+            "<automix.automix_methods.SelfConsistency object at 0x7fac99c46990>": [
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5,
+                0.5
+            ]
+        }
+    },
+    "costs": {
+        "coqa": {
+            "AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac99d752d0>, <automix.automix_methods.GreedyPOMDP object at 0x7fac99cc1ad0>, <automix.automix_methods.DoubleThreshold object at 0x7fadbe8a14d0>, <automix.automix_methods.Threshold object at 0x7fac99dd1510>)": [
+                6.32446264073695,
+                5.390481064483112,
+                6.32446264073695,
+                12.030706243602866,
+                4.9426816786079835,
+                8.141248720573184,
+                2.9083930399181166,
+                8.806550665301945,
+                6.32446264073695,
+                8.141248720573184
+            ],
+            "<automix.automix_methods.Threshold object at 0x7fac99d49790>": [
+                2.9083930399181166,
+                4.9426816786079835,
+                12.030706243602866,
+                12.030706243602866,
+                4.9426816786079835,
+                8.141248720573184,
+                2.9083930399181166,
+                8.141248720573184,
+                8.141248720573184,
+                8.141248720573184
+            ],
+            "<automix.automix_methods.SelfConsistency object at 0x7fac99d32e50>": [
+                16.57267144319345,
+                16.57267144319345,
+                16.57267144319345,
+                16.57267144319345,
+                16.57267144319345,
+                16.57267144319345,
+                16.57267144319345,
+                16.57267144319345,
+                16.57267144319345,
+                16.57267144319345
+            ]
+        },
+        "cnli": {
+            "AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac8bbb6850>, <automix.automix_methods.GreedyPOMDP object at 0x7fac8bbb6d90>, <automix.automix_methods.DoubleThreshold object at 0x7fac8bbb5c10>, <automix.automix_methods.Threshold object at 0x7fac8a817690>)": [
+                3.1089681774349085,
+                10.727097396335584,
+                11.064609450337512,
+                6.1947926711668275,
+                5.760848601735776,
+                5.4233365477338475,
+                6.1947926711668275,
+                6.532304725168756,
+                5.4233365477338475,
+                6.1947926711668275
+            ],
+            "<automix.automix_methods.Threshold object at 0x7fac8bbb5c10>": [
+                52.0,
+                52.0,
+                52.0,
+                52.0,
+                52.0,
+                51.66248794599807,
+                51.66248794599807,
+                52.0,
+                51.66248794599807,
+                52.0
+            ],
+            "<automix.automix_methods.SelfConsistency object at 0x7fac8a82df10>": [
+                47.46769527483124,
+                47.46769527483124,
+                47.46769527483124,
+                47.46769527483124,
+                47.46769527483124,
+                47.46769527483124,
+                47.46769527483124,
+                47.46769527483124,
+                47.46769527483124,
+                47.46769527483124
+            ]
+        },
+        "narrative_qa": {
+            "AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac99caa5d0>, <automix.automix_methods.GreedyPOMDP object at 0x7fac99ca9550>, <automix.automix_methods.DoubleThreshold object at 0x7fac8a9d4250>, <automix.automix_methods.Threshold object at 0x7fac8a9d7890>)": [
+                13.251287332646756,
+                8.659800892550635,
+                8.230690010298662,
+                11.757981462409887,
+                4.257123240645383,
+                4.368692070030896,
+                7.664263645726056,
+                16.160659114315138,
+                7.664263645726056,
+                17.46515619636114
+            ],
+            "<automix.automix_methods.Threshold object at 0x7fac8a897bd0>": [
+                23.00926879505664,
+                14.564366632337796,
+                8.230690010298662,
+                4.368692070030896,
+                23.00926879505664,
+                4.368692070030896,
+                8.230690010298662,
+                23.00926879505664,
+                8.230690010298662,
+                48.652935118434605
+            ],
+            "<automix.automix_methods.SelfConsistency object at 0x7fac8a8b8e90>": [
+                23.00926879505664,
+                23.00926879505664,
+                23.00926879505664,
+                23.00926879505664,
+                23.00926879505664,
+                23.00926879505664,
+                23.00926879505664,
+                23.00926879505664,
+                23.00926879505664,
+                23.00926879505664
+            ]
+        },
+        "quality": {
+            "AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac91ac7550>, <automix.automix_methods.GreedyPOMDP object at 0x7fac91ac7fd0>, <automix.automix_methods.DoubleThreshold object at 0x7fac91ac6cd0>, <automix.automix_methods.Threshold object at 0x7fadbea71fd0>)": [
+                18.258992805755394,
+                18.930455635491608,
+                6.436450839328537,
+                8.810551558752998,
+                22.93525179856115,
+                17.083932853717027,
+                18.258992805755394,
+                9.146282973621103,
+                29.026378896882495,
+                9.146282973621103
+            ],
+            "<automix.automix_methods.Threshold object at 0x7fac93cad5d0>": [
+                52.0,
+                34.49400479616307,
+                34.49400479616307,
+                15.16546762589928,
+                23.486810551558754,
+                34.49400479616307,
+                44.853717026378895,
+                34.49400479616307,
+                52.0,
+                52.0
+            ],
+            "<automix.automix_methods.SelfConsistency object at 0x7fac91ac5f50>": [
+                15.16546762589928,
+                15.16546762589928,
+                15.16546762589928,
+                15.16546762589928,
+                15.16546762589928,
+                15.16546762589928,
+                15.16546762589928,
+                15.16546762589928,
+                15.16546762589928,
+                15.16546762589928
+            ]
+        },
+        "qasper": {
+            "FixedAnswerRouting(AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac99cc09d0>, <automix.automix_methods.GreedyPOMDP object at 0x7fac99cc0250>, <automix.automix_methods.DoubleThreshold object at 0x7fac99c46990>, <automix.automix_methods.Threshold object at 0x7fac8a990290>), unanswerable'.)": [
+                44.91545189504373,
+                44.91545189504373,
+                44.91545189504373,
+                44.91545189504373,
+                46.518950437317784,
+                44.91545189504373,
+                44.91545189504373,
+                45.79008746355685,
+                44.91545189504373,
+                45.177842565597665
+            ],
+            "FixedAnswerRouting(<automix.automix_methods.Threshold object at 0x7fac8a7f9750>, unanswerable'.)": [
+                48.268221574344025,
+                50.10495626822158,
+                41.67930029154519,
+                50.10495626822158,
+                48.268221574344025,
+                48.268221574344025,
+                46.66472303206997,
+                50.10495626822158,
+                46.66472303206997,
+                41.67930029154519
+            ],
+            "<automix.automix_methods.SelfConsistency object at 0x7fac99c46990>": [
+                44.332361516034986,
+                44.332361516034986,
+                44.332361516034986,
+                44.332361516034986,
+                44.332361516034986,
+                44.332361516034986,
+                44.332361516034986,
+                44.332361516034986,
+                44.332361516034986,
+                44.332361516034986
+            ]
+        }
+    },
+    "perfs": {
+        "coqa": {
+            "AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac99d752d0>, <automix.automix_methods.GreedyPOMDP object at 0x7fac99cc1ad0>, <automix.automix_methods.DoubleThreshold object at 0x7fadbe8a14d0>, <automix.automix_methods.Threshold object at 0x7fac99dd1510>)": [
+                0.5017126880461106,
+                0.49820716131629994,
+                0.5017126880461106,
+                0.5298372399851076,
+                0.49754298485611564,
+                0.5117133023528403,
+                0.4858214854861566,
+                0.5140983638762538,
+                0.5017126880461106,
+                0.5117133023528403
+            ],
+            "<automix.automix_methods.Threshold object at 0x7fac99d49790>": [
+                0.4858214854861566,
+                0.49754298485611564,
+                0.5298372399851076,
+                0.5298372399851076,
+                0.49754298485611564,
+                0.5117133023528403,
+                0.4858214854861566,
+                0.5117133023528403,
+                0.5117133023528403,
+                0.5117133023528403
+            ],
+            "<automix.automix_methods.SelfConsistency object at 0x7fac99d32e50>": [
+                0.5470152522145855,
+                0.5470152522145855,
+                0.5470152522145855,
+                0.5470152522145855,
+                0.5470152522145855,
+                0.5470152522145855,
+                0.5470152522145855,
+                0.5470152522145855,
+                0.5470152522145855,
+                0.5470152522145855
+            ]
+        },
+        "cnli": {
+            "AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac8bbb6850>, <automix.automix_methods.GreedyPOMDP object at 0x7fac8bbb6d90>, <automix.automix_methods.DoubleThreshold object at 0x7fac8bbb5c10>, <automix.automix_methods.Threshold object at 0x7fac8a817690>)": [
+                0.40790742526518803,
+                0.4570877531340405,
+                0.4561234329797493,
+                0.43490838958534234,
+                0.43008678881388623,
+                0.43105110896817744,
+                0.43490838958534234,
+                0.4339440694310511,
+                0.43105110896817744,
+                0.43490838958534234
+            ],
+            "<automix.automix_methods.Threshold object at 0x7fac8bbb5c10>": [
+                0.5554484088717454,
+                0.5554484088717454,
+                0.5554484088717454,
+                0.5554484088717454,
+                0.5554484088717454,
+                0.5564127290260367,
+                0.5564127290260367,
+                0.5554484088717454,
+                0.5564127290260367,
+                0.5554484088717454
+            ],
+            "<automix.automix_methods.SelfConsistency object at 0x7fac8a82df10>": [
+                0.5226615236258437,
+                0.5226615236258437,
+                0.5226615236258437,
+                0.5226615236258437,
+                0.5226615236258437,
+                0.5226615236258437,
+                0.5226615236258437,
+                0.5226615236258437,
+                0.5226615236258437,
+                0.5226615236258437
+            ]
+        },
+        "narrative_qa": {
+            "AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac99caa5d0>, <automix.automix_methods.GreedyPOMDP object at 0x7fac99ca9550>, <automix.automix_methods.DoubleThreshold object at 0x7fac8a9d4250>, <automix.automix_methods.Threshold object at 0x7fac8a9d7890>)": [
+                0.21785390616814276,
+                0.21207180940878823,
+                0.21315190151503605,
+                0.21806143634134914,
+                0.20764137918731548,
+                0.20812802394406107,
+                0.21199484030562998,
+                0.22249186656282183,
+                0.21199484030562998,
+                0.2197693713963783
+            ],
+            "<automix.automix_methods.Threshold object at 0x7fac8a897bd0>": [
+                0.23307973268026094,
+                0.22062778389737384,
+                0.21315190151503605,
+                0.20812802394406107,
+                0.23307973268026094,
+                0.20812802394406107,
+                0.21315190151503605,
+                0.23307973268026094,
+                0.21315190151503605,
+                0.26271336191380024
+            ],
+            "<automix.automix_methods.SelfConsistency object at 0x7fac8a8b8e90>": [
+                0.23307973268026094,
+                0.23307973268026094,
+                0.23307973268026094,
+                0.23307973268026094,
+                0.23307973268026094,
+                0.23307973268026094,
+                0.23307973268026094,
+                0.23307973268026094,
+                0.23307973268026094,
+                0.23307973268026094
+            ]
+        },
+        "quality": {
+            "AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac91ac7550>, <automix.automix_methods.GreedyPOMDP object at 0x7fac91ac7fd0>, <automix.automix_methods.DoubleThreshold object at 0x7fac91ac6cd0>, <automix.automix_methods.Threshold object at 0x7fadbea71fd0>)": [
+                0.5386091127098321,
+                0.5434052757793765,
+                0.494484412470024,
+                0.5002398081534772,
+                0.5573141486810551,
+                0.5371702637889688,
+                0.5386091127098321,
+                0.4983213429256595,
+                0.581294964028777,
+                0.4983213429256595
+            ],
+            "<automix.automix_methods.Threshold object at 0x7fac93cad5d0>": [
+                0.6709832134292566,
+                0.6028776978417266,
+                0.6028776978417266,
+                0.5275779376498801,
+                0.5601918465227818,
+                0.6028776978417266,
+                0.6474820143884892,
+                0.6028776978417266,
+                0.6709832134292566,
+                0.6709832134292566
+            ],
+            "<automix.automix_methods.SelfConsistency object at 0x7fac91ac5f50>": [
+                0.5275779376498801,
+                0.5275779376498801,
+                0.5275779376498801,
+                0.5275779376498801,
+                0.5275779376498801,
+                0.5275779376498801,
+                0.5275779376498801,
+                0.5275779376498801,
+                0.5275779376498801,
+                0.5275779376498801
+            ]
+        },
+        "qasper": {
+            "FixedAnswerRouting(AutomixUnion(<automix.automix_methods.POMDPSimple object at 0x7fac99cc09d0>, <automix.automix_methods.GreedyPOMDP object at 0x7fac99cc0250>, <automix.automix_methods.DoubleThreshold object at 0x7fac99c46990>, <automix.automix_methods.Threshold object at 0x7fac8a990290>), unanswerable'.)": [
+                0.2758048223855394,
+                0.2758048223855394,
+                0.2758048223855394,
+                0.2758048223855394,
+                0.27678371040419825,
+                0.2758048223855394,
+                0.2758048223855394,
+                0.27587802420804663,
+                0.2758048223855394,
+                0.2763879127645481
+            ],
+            "FixedAnswerRouting(<automix.automix_methods.Threshold object at 0x7fac8a7f9750>, unanswerable'.)": [
+                0.2788882188810496,
+                0.28136204811778426,
+                0.26903224160513123,
+                0.28136204811778426,
+                0.2788882188810496,
+                0.2788882188810496,
+                0.27790933086239067,
+                0.28136204811778426,
+                0.27790933086239067,
+                0.26903224160513123
+            ],
+            "<automix.automix_methods.SelfConsistency object at 0x7fac99c46990>": [
+                0.2675712781462391,
+                0.2675712781462391,
+                0.2675712781462391,
+                0.2675712781462391,
+                0.2675712781462391,
+                0.2675712781462391,
+                0.2675712781462391,
+                0.2675712781462391,
+                0.2675712781462391,
+                0.2675712781462391
+            ]
+        }
+    }
+}

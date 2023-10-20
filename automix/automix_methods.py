@@ -11,26 +11,26 @@ class Threshold:
 		self.gap = 1/num_bins
 		pass
 
-	def run(self, data : pd.DataFrame, threshold : float = 0.5) -> pd.DataFrame:
-		to_retry = data['p_ver_13b'] <= threshold
+	def run(self, data : pd.DataFrame, threshold : float = 0.5, verifier_column = 'p_ver_13b') -> pd.DataFrame:
+		to_retry = data[verifier_column] <= threshold
 
 		return to_retry
 	
-	def generate_points(self, data = None):
+	def generate_points(self, data = None, verifier_column = 'p_ver_13b'):
 		gap = 1/self.num_bins
 		return [x*gap for x in range(self.num_bins+1)]
 
 class DoubleThreshold(Threshold):
 
-	def run(self, data : pd.DataFrame, threshold : Tuple[float, float] = [0.25, 0.75]) -> pd.DataFrame:
+	def run(self, data : pd.DataFrame, threshold : Tuple[float, float] = [0.25, 0.75], verifier_column = 'p_ver_13b') -> pd.DataFrame:
 		try:
-			to_retry = data['p_ver_13b'].between(threshold[0], threshold[1])
+			to_retry = data[verifier_column].between(threshold[0], threshold[1])
 		except:
-			to_retry = data[['p_ver_13b']].between(threshold[0], threshold[1])['p_ver_13b']
+			to_retry = data[[verifier_column]].between(threshold[0], threshold[1])[verifier_column]
 
 		return to_retry
 
-	def generate_points(self, data = None):
+	def generate_points(self, data = None, verifier_column = 'p_ver_13b'):
 		points = []
 		for i in range(self.num_bins):
 			for j in range(i+1, self.num_bins):
@@ -39,14 +39,14 @@ class DoubleThreshold(Threshold):
 
 class TripleThreshold(DoubleThreshold):	
 
-	def run(self, data : pd.DataFrame, threshold : Tuple[float, float, float] = [0.25, 0.5, 0.75]) -> pd.DataFrame:
+	def run(self, data : pd.DataFrame, threshold : Tuple[float, float, float] = [0.25, 0.5, 0.75], verifier_column = 'p_ver_13b') -> pd.DataFrame:
 		try:
-			to_retry = data['p_ver_13b'].between(0, threshold[0]) | data['p_ver_13b'].between(threshold[1], threshold[2])
+			to_retry = data[verifier_column].between(0, threshold[0]) | data[verifier_column].between(threshold[1], threshold[2])
 		except:
-			to_retry = data[['p_ver_13b']].between(0, threshold[0])['p_ver_13b'] | data[['p_ver_13b']].between(threshold[1], threshold[2])['p_ver_13b']
+			to_retry = data[[verifier_column]].between(0, threshold[0])[verifier_column] | data[[verifier_column]].between(threshold[1], threshold[2])[verifier_column]
 		return to_retry
 
-	def generate_points(self, data = None):
+	def generate_points(self, data = None, verifier_column = 'p_ver_13b'):
 		points = []
 		for i in range(self.num_bins):
 			for j in range(i+1, self.num_bins):
@@ -56,18 +56,18 @@ class TripleThreshold(DoubleThreshold):
 
 class SelfConsistency(Threshold):
 
-	def generate_points(self, data = None):
+	def generate_points(self, data = None, verifier_column = 'p_ver_13b'):
 		return [0.5]
 
 class POMDPSimple:
 
-	def compute_obs_probs(self, df):
+	def compute_obs_probs(self, df, verifier_column = 'p_ver_13b'):
 		categories = ['NEEDY', 'GOOD', 'HOPELESS']
 		obs_probs = np.zeros((self.num_bins+1, 3))
 
 		for idx, prob in enumerate([i*self.gap for i in range(self.num_bins+1)]):
-			df_new = df[df['p_ver_13b'] - prob < self.gap/2] 
-			df_new = df_new[df_new['p_ver_13b'] - prob > -self.gap/2] 
+			df_new = df[df[verifier_column] - prob < self.gap/2] 
+			df_new = df_new[df_new[verifier_column] - prob > -self.gap/2] 
 			try:    
 				vcs = df_new['category'].value_counts()
 				obs_probs[idx] = [(vcs[cat] if cat in vcs else 0)/len(df_new) for cat in categories]
@@ -106,23 +106,23 @@ class POMDPSimple:
 		self.gap = 1/num_bins
 		self.init_belief = init_belief
 
-	def run(self, data : pd.DataFrame, action_seq : List[int] = []) -> pd.DataFrame:
-		if isinstance(data['p_ver_13b'], float):
-			to_retry = data[['p_ver_13b']].apply(lambda x: self.get_action(x, action_seq))['p_ver_13b']
+	def run(self, data : pd.DataFrame, action_seq : List[int] = [], verifier_column = 'p_ver_13b') -> pd.DataFrame:
+		if isinstance(data[verifier_column], float):
+			to_retry = data[[verifier_column]].apply(lambda x: self.get_action(x, action_seq))[verifier_column]
 		else:
-			to_retry = data['p_ver_13b'].apply(lambda x: self.get_action(x, action_seq)) 
+			to_retry = data[verifier_column].apply(lambda x: self.get_action(x, action_seq)) 
 		return to_retry
 
-	def generate_points(self, data):
-		return self.compute_obs_probs(data)
+	def generate_points(self, data, verifier_column = 'p_ver_13b'):
+		return self.compute_obs_probs(data, verifier_column = verifier_column)
 
 class GreedyPOMDP(POMDPSimple):
 
-	def generate_points(self, data = None):
+	def generate_points(self, data = None, verifier_column = 'p_ver_13b'):
 		points = []
 		for x in [i for i in range(self.num_bins+1)]:
-			df_fil = data[data['p_ver_13b'].apply(lambda y: self.get_neearest_prob_idx(y) == x)]
-			df_fil = data[data['p_ver_13b'].apply(lambda y: y//self.gap == x)]
+			df_fil = data[data[verifier_column].apply(lambda y: self.get_neearest_prob_idx(y) == x)]
+			df_fil = data[data[verifier_column].apply(lambda y: y//self.gap == x)]
 			
 			wt = len(df_fil)/len(data)
 			delta_f = df_fil['llama70b_f1'] - df_fil['llama13b_f1']
@@ -134,8 +134,8 @@ class GreedyPOMDP(POMDPSimple):
 		means = []
 		total_perf = 0
 		total_cost = 1
-		nq_sl = (data['llama70b_f1'].mean() - data['llama13b_f1'].mean())/49
-		prev_mean = -1
+		# nq_sl = (data['llama70b_f1'].mean() - data['llama13b_f1'].mean())/49
+		# prev_mean = -1
 
 		for i, index in enumerate(sorted(points[:], key = lambda x: x[0])[::-1]):
 			if i == 0: params[i][index[1]] = 1
@@ -164,10 +164,10 @@ class AutomixUnion:
 	def __init__(self, *methods):
 		self.methods = list(methods)
 
-	def run(self, data : pd.DataFrame, param) -> pd.DataFrame:
+	def run(self, data : pd.DataFrame, param, verifier_column = 'p_ver_13b') -> pd.DataFrame:
 		return self.methods[param[1]].run(data, param[0])
 
-	def generate_points(self, data = None):
+	def generate_points(self, data = None, verifier_column = 'p_ver_13b'):
 		new_points = []
 		for i, meth in enumerate(self.methods):
 			new_points.extend([(x,i) for x in meth.generate_points(data)])
@@ -179,22 +179,25 @@ class AutomixUnion:
 
 class FixedAnswerRouting:
 	
-	def __init__(self, method, fixed_routing_elems : List[str] = []):
+	def __init__(self, method, fixed_routing_elems : List[str] = [], ans_column = 'llama13b_pred_ans'):
 		self.fixed_routing_elems = fixed_routing_elems
 		self.method = method
+		self.ans_column
 
 	def run(self, data : pd.DataFrame, param) -> pd.DataFrame:
-		if isinstance(data['llama13b_pred_ans'], str):
-			to_retry = data[['llama13b_pred_ans']].apply(lambda x: x in self.fixed_routing_elems)['llama13b_pred_ans']
+		if isinstance(data[self.ans_column], str):
+			to_retry = data[[self.ans_column]].apply(lambda x: x in self.fixed_routing_elems)[self.ans_column]
 		else:
-			to_retry = data['llama13b_pred_ans'].apply(lambda x: x in self.fixed_routing_elems) 
+			to_retry = data[self.ans_column].apply(lambda x: x in self.fixed_routing_elems) 
 		to_retry = to_retry | self.method.run(data, param)
 		return to_retry
 
-	def generate_points(self, data = None):
+	def generate_points(self, data = None, verifier_column = 'p_ver_13b'):
 		return self.method.generate_points(data)
 
 	def __repr__(self) -> str:
 		return 'FixedAnswerRouting(' + str(self.method) + ', ' + str(self.fixed_routing_elems) + ')'
 
+
+# Since it is a single step POMDP, we do not require explicit use of POMDP sovlers.
 POMDP = lambda *args, **kwargs: AutomixUnion(POMDPSimple(*args, **kwargs), GreedyPOMDP(*args, **kwargs), DoubleThreshold(*args, **kwargs), Threshold(*args, **kwargs))

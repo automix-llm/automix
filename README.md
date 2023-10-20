@@ -1,12 +1,19 @@
-# AutoMix: Automatically Mixing Language Models
+<div align="center">
+    <h1> AutoMix: Automatically Mixing Language Models</h1>
+    <!-- <p><i>Auto Solve Google's Recaptcha Image Challenge with near human performance!</i></p> -->
+    <img src="https://img.shields.io/badge/arXiv-2310.12963-%3CCOLOR%3E.svg?style=for-the-badge">
+    <a href="https://pypi.org/project/automix"><img src="https://img.shields.io/pypi/v/automix-llm?style=for-the-badge"></a>
+	<br>
+	<br>
+</div>
 
-[Arxiv Paper](https://arxiv.org/abs/2310.12963)
+<!-- # AutoMix: Automatically Mixing Language Models -->
+
+<!-- [Arxiv Paper](https://arxiv.org/abs/2310.12963) -->
 
 <div align="center">
     <img src="https://github.com/automix-llm/automix/assets/1304693/a81ba101-247d-4fa7-8dc3-989dd5884483" width="500">
 </div>
-
-
 
 
 ## What is AutoMix?
@@ -54,9 +61,10 @@ At the center of automix is the idea of context-grounded self-verification:
 
 ### Meta-verification
 
-- [**Step3 Meta Verify**](github.com/automix-llm/automix/blob/main/colabs/Step3_MetaVerify.ipynb) - Run meta-verification using different AutoMix methods on outputs produced from Step 2. 
+- [**Step3 Meta Verify**](https://github.com/automix-llm/automix/blob/main/colabs/Step3_MetaVerify.ipynb) - Run meta-verification using different AutoMix methods on outputs produced from Step 2. 
+   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/automix-llm/automix/blob/main/colabs/Step3_MetaVerify.ipynb)
 
-- You can run `python setup.py install' to use the meta-verifier system wide.
+- You can run `pip install automix-llm' to use the meta-verifier system wide.
 
 
 
@@ -93,17 +101,20 @@ llama13b_ver: Verification outputs of the llama13b model’s answers.
 ### Stats
 
 ```txt
-dataset       split
-cnli          train    7191
-              val      1037
-coqa          train    3941
-              val      3908
-narrative_qa  train    9946
-              val      5826
-qasper        train    2556
-              val      1715
-quality       train    2515
-              val      2085
+--------------------------------
+| Dataset      | Split | Count |
+|--------------|-------|-------|
+| cnli         | train | 7191  |
+|              | val   | 1037  |
+| coqa         | train | 3941  |
+|              | val   | 3908  |
+| narrative_qa | train | 9946  |
+|              | val   | 5826  |
+| qasper       | train | 2556  |
+|              | val   | 1715  |
+| quality      | train | 2515  |
+|              | val   | 2085  |
+--------------------------------
 Name: split, dtype: int64
 ```
 
@@ -121,6 +132,3 @@ Name: split, dtype: int64
       archivePrefix={arXiv},
       primaryClass={cs.CL}
 }
-
-
-
