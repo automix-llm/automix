@@ -1,9 +1,13 @@
 # AutoMix: Automatically Mixing Language Models
 
+[Arxiv Paper](https://arxiv.org/abs/2310.12963)
 
 <div align="center">
     <img src="https://github.com/automix-llm/automix/assets/1304693/a81ba101-247d-4fa7-8dc3-989dd5884483" width="500">
 </div>
+
+
+
 
 
 ## What is AutoMix?
@@ -88,6 +92,17 @@ Name: split, dtype: int64
 
 
 
+## Citation
+
+```
+@misc{madaan2023automix,
+      title={AutoMix: Automatically Mixing Language Models}, 
+      author={Aman Madaan and Pranjal Aggarwal and Ankit Anand and Srividya Pranavi Potharaju and Swaroop Mishra and Pei Zhou and Aditya Gupta and Dheeraj Rajagopal and Karthik Kappaganthu and Yiming Yang and Shyam Upadhyay and Mausam and Manaal Faruqui},
+      year={2023},
+      eprint={2310.12963},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
 
 
 
