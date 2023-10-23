@@ -72,8 +72,9 @@ class POMDPSimple:
 				vcs = df_new['category'].value_counts()
 				obs_probs[idx] = [(vcs[cat] if cat in vcs else 0)/len(df_new) for cat in categories]
 			except Exception as e:
-				print('Error in categorization', e)
-
+				# print('Error in categorization', e)
+				...
+				
 		belief = np.array([1 for _ in range(len(categories))])
 		if self.init_belief:
 			# Use value_counts from category to get initial belief
@@ -129,13 +130,11 @@ class GreedyPOMDP(POMDPSimple):
 			points.append((delta_f.mean() if len(df_fil)!=0 else 0, x, wt))
 		
 		points = list(zip(gaussian_filter([x[0] for x in points], sigma=2), [x[1] for x in points], [x[2] for x in points]))				
-		# points = [x for x in points if x[2]<=(0.01*len(data))]
+
 		params = [[0 for _ in range(self.num_bins+1)] for _ in range(len(points))]
 		means = []
 		total_perf = 0
 		total_cost = 1
-		# nq_sl = (data['llama70b_f1'].mean() - data['llama13b_f1'].mean())/49
-		# prev_mean = -1
 
 		for i, index in enumerate(sorted(points[:], key = lambda x: x[0])[::-1]):
 			if i == 0: params[i][index[1]] = 1
@@ -145,16 +144,7 @@ class GreedyPOMDP(POMDPSimple):
 				params[i][idx] = 1
 			total_perf += index[0]*index[2]
 			total_cost += index[2] * 49
-			# new_mean = total_perf / total_cost
-			# print(new_mean)
-			# if new_mean - prev_mean < (-0.01)*nq_sl:
-			# 	break
-		
-			# means.append(new_mean/nq_sl - 1)
-		# from pdb import set_trace
-		# set_trace()
-		return params#[:np.argmax(means)+1]
-		# return params#[3:-3]
+		return params
 		
 
 class AutomixUnion:
@@ -165,12 +155,12 @@ class AutomixUnion:
 		self.methods = list(methods)
 
 	def run(self, data : pd.DataFrame, param, verifier_column = 'p_ver_13b') -> pd.DataFrame:
-		return self.methods[param[1]].run(data, param[0])
+		return self.methods[param[1]].run(data, param[0], verifier_column=verifier_column)
 
 	def generate_points(self, data = None, verifier_column = 'p_ver_13b'):
 		new_points = []
 		for i, meth in enumerate(self.methods):
-			new_points.extend([(x,i) for x in meth.generate_points(data)])
+			new_points.extend([(x,i) for x in meth.generate_points(data, verifier_column=verifier_column)])
 		return new_points
 
 	def __repr__(self) -> str:
@@ -184,16 +174,16 @@ class FixedAnswerRouting:
 		self.method = method
 		self.ans_column
 
-	def run(self, data : pd.DataFrame, param) -> pd.DataFrame:
+	def run(self, data : pd.DataFrame, param, verifier_column = 'p_ver_13b') -> pd.DataFrame:
 		if isinstance(data[self.ans_column], str):
 			to_retry = data[[self.ans_column]].apply(lambda x: x in self.fixed_routing_elems)[self.ans_column]
 		else:
 			to_retry = data[self.ans_column].apply(lambda x: x in self.fixed_routing_elems) 
-		to_retry = to_retry | self.method.run(data, param)
+		to_retry = to_retry | self.method.run(data, param, verifier_column=verifier_column)
 		return to_retry
 
 	def generate_points(self, data = None, verifier_column = 'p_ver_13b'):
-		return self.method.generate_points(data)
+		return self.method.generate_points(data, verifier_column=verifier_column)
 
 	def __repr__(self) -> str:
 		return 'FixedAnswerRouting(' + str(self.method) + ', ' + str(self.fixed_routing_elems) + ')'
