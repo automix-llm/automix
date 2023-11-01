@@ -7,7 +7,7 @@ def read(fname):
 
 setup(
     name = "automix-llm",
-    version = "1.0.1",
+    version = "1.0.3",
     description = ("Library for Mixing Multiple Models with differential costs and performance."),
     license = "Apache License 2.0",
     packages=find_packages(),

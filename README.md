@@ -3,7 +3,7 @@
     <!-- <p><i>Auto Solve Google's Recaptcha Image Challenge with near human performance!</i></p> -->
     <a href="https://automix-llm.github.io/automix/"><img src="https://img.shields.io/website?down_message=down&style=for-the-badge&up_message=up&url=https%3A%2F%2Fautomix-llm.github.io/automix/"></a>
 <a href="https://arxiv.org/abs/2310.12963"><img src="https://img.shields.io/badge/arXiv-2310.12963-red.svg?style=for-the-badge"></a>
-    <a href="https://pypi.org/project/automix"><img src="https://img.shields.io/pypi/v/automix-llm?style=for-the-badge"></a>
+    <a href="https://pypi.org/project/automix-llm/"><img src="https://img.shields.io/pypi/v/automix-llm?style=for-the-badge"></a>
 	<br>
 	<br>
 </div>

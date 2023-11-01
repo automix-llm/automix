@@ -29,10 +29,10 @@ class Automix:
 
 
     def __init__(self,  
-                 method: Union[str, Threshold] = 'threshold',
-                 slm_column: str = 'slm_score',
-                 llm_column: str = 'llm_score',  
-                 verifier_column: str = 'verifier_score',
+                 method: Union[str, Threshold],
+                 slm_column: str = 'llama13b_f1',
+                 llm_column: str = 'llama70b_f1',  
+                 verifier_column: str = 'p_ver_13b',
                  costs: List[int] = [1, 50],
                  verifier_cost: int = 1,
                  verbose: bool = False):
@@ -40,7 +40,7 @@ class Automix:
         Initialize Automix with parameters.
         
         Args:
-            method: Automix variant, default is 'threshold'.
+            method: Automix variant, compulsory argument.
             slm_column: SLM score column name.
             llm_column: LLM score column name.
             verifier_column: Verifier confidence column name. 
@@ -100,7 +100,7 @@ class Automix:
         return slm_llm_slope, slm_perf, llm_perf
 
     def train(self, data, 
-              costs=None, verifier_cost=None):
+              costs=None, verifier_cost=None, cost_constraint = None):
         """
         Train automix by trying different parameters and picking best.
         
@@ -118,6 +118,10 @@ class Automix:
         for param in self.method.generate_points(data, verifier_column=self.verifier_column):
             to_retry = self.method.run(data, param, verifier_column=self.verifier_column)
             avg_performance, avg_cost = self.compute_performance_cost(data, to_retry, costs=costs, verifier_cost=verifier_cost)
+
+            if cost_constraint is not None:
+                if avg_cost < cost_constraint[0] or avg_cost > cost_constraint[1]:
+                    continue
 
             slm_llm_slope, slm_perf, _ = self.get_slm_llm_slope_perf(data, costs=costs, verifier_cost=verifier_cost)
 

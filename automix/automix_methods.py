@@ -6,7 +6,11 @@ from scipy.ndimage import gaussian_filter
 
 class Threshold:
 
-	def __init__(self, num_bins):
+	def __init__(self, num_bins, **kwargs):
+		# Set all kwargs to self
+		for key, value in kwargs.items():
+			setattr(self, key, value)   
+
 		self.num_bins = num_bins
 		self.gap = 1/num_bins
 		pass
@@ -102,7 +106,12 @@ class POMDPSimple:
 	def get_action(self, x, action_seq):
 		return action_seq[self.get_neearest_prob_idx(x)] == 1
 
-	def __init__(self, num_bins, init_belief = False) -> None:
+	def __init__(self, num_bins, init_belief = False, **kwargs) -> None:
+
+		# Set all kwargs to self
+		for key, value in kwargs.items():
+			setattr(self, key, value)   
+
 		self.num_bins = num_bins
 		self.gap = 1/num_bins
 		self.init_belief = init_belief
@@ -118,6 +127,11 @@ class POMDPSimple:
 		return self.compute_obs_probs(data, verifier_column = verifier_column)
 
 class GreedyPOMDP(POMDPSimple):
+
+	def __init__(self, num_bins, init_belief = False, slm_column = 'llama13b_f1', llm_column = 'llama70b_f1', **kwargs) -> None:
+		super().__init__(num_bins, init_belief, **kwargs)
+		self.slm_column = slm_column
+		self.llm_column = llm_column
 
 	def generate_points(self, data = None, verifier_column = 'p_ver_13b'):
 		points = []
@@ -172,7 +186,7 @@ class FixedAnswerRouting:
 	def __init__(self, method, fixed_routing_elems : List[str] = [], ans_column = 'llama13b_pred_ans'):
 		self.fixed_routing_elems = fixed_routing_elems
 		self.method = method
-		self.ans_column
+		self.ans_column = ans_column
 
 	def run(self, data : pd.DataFrame, param, verifier_column = 'p_ver_13b') -> pd.DataFrame:
 		if isinstance(data[self.ans_column], str):
